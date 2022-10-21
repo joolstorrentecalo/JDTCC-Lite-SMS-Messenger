@@ -108,36 +108,6 @@
         </activity>
 
         <activity
-            android:name=".activities.SettingsActivity"
-            android:exported="true"
-            android:label="@string/settings"
-            android:parentActivityName=".activities.MainActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.simplemobiletools.commons.activities.AboutActivity"
-            android:exported="false"
-            android:label="@string/about"
-            android:parentActivityName=".activities.MainActivity" />
-
-        <activity
-            android:name="com.simplemobiletools.commons.activities.CustomizationActivity"
-            android:exported="false"
-            android:label="@string/customize_colors"
-            android:parentActivityName=".activities.SettingsActivity" />
-
-        <activity
-            android:name="com.simplemobiletools.commons.activities.ManageBlockedNumbersActivity"
-            android:exported="false"
-            android:label="@string/blocked_numbers"
-            android:parentActivityName=".activities.SettingsActivity" />
-
-        <activity
             android:name=".activities.VCardViewerActivity"
             android:exported="false"
             android:label="@string/contact_details"

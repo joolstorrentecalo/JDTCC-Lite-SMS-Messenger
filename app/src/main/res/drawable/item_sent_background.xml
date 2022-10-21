@@ -7,6 +7,6 @@
         android:topLeftRadius="@dimen/normal_margin"
         android:topRightRadius="@dimen/normal_margin" />
 
-    <solid android:color="@color/color_primary" />
+    <solid android:color="#E91E63" />
 
 </shape>

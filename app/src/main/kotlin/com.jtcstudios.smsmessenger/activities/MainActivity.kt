@@ -119,10 +119,8 @@ class MainActivity : SimpleActivity() {
         main_toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.search -> launchSearch()
-                R.id.settings -> launchSettings()
                 R.id.export_messages -> tryToExportMessages()
                 R.id.import_messages -> tryImportMessages()
-                R.id.about -> launchAbout()
                 else -> return@setOnMenuItemClickListener false
             }
             return@setOnMenuItemClickListener true
@@ -362,27 +360,6 @@ class MainActivity : SimpleActivity() {
         startActivity(Intent(applicationContext, SearchActivity::class.java))
     }
 
-    private fun launchSettings() {
-        hideKeyboard()
-        startActivity(Intent(applicationContext, SettingsActivity::class.java))
-    }
-
-    private fun launchAbout() {
-        val licenses = LICENSE_EVENT_BUS or LICENSE_SMS_MMS or LICENSE_INDICATOR_FAST_SCROLL
-
-        val faqItems = arrayListOf(
-            FAQItem(R.string.faq_2_title, R.string.faq_2_text),
-            FAQItem(R.string.faq_3_title, R.string.faq_3_text),
-            FAQItem(R.string.faq_9_title_commons, R.string.faq_9_text_commons)
-        )
-
-        if (!resources.getBoolean(R.bool.hide_google_relations)) {
-            faqItems.add(FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons))
-            faqItems.add(FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons))
-        }
-
-        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
-    }
 
     private fun tryToExportMessages() {
         if (isQPlus()) {
